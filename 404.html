@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/index.css"/>
+</head>
+<body>
+    <div class="wrapper">
+    <!-- Header start -->
+    <header class="header">
+      <a href="/" class="header__logo">
+      <img src="./assets/images/logo.svg" alt="Logo PET">
+      </a>
+
+      <nav>
+      <ul class="header__nav">
+          <li>
+          <a href="#mission" class="header__nav_link">misja</a>
+          </li>
+          <li>
+          <a href="#about" class="header__nav_link">o produkcie</a>
+          </li>
+          <li>
+          <a href="#contact" class="header__nav_link">kontakt</a>
+          </li>
+      </ul>
+      </nav>
+
+      <ul class="header__lang">
+      <li>
+          <a href="" class="pl active">pl</a>
+      </li>
+      <li>
+          <a href="" class="en">en</a>
+      </li>
+      </ul>
+
+      <div class="header__burger">
+      <span></span>
+      </div>
+    </header><!-- Header end -->
+
+    <!-- Main start -->
+    <main class="main">
+      <section class="error">
+        <div class="error__container container">
+          <div class="error__image" style="background: url('../assets/images/bakterie404.svg') ;background-size: 100% 100%;">
+            <img src="./assets/images/404.png" alt="404">
+          </div>
+          <div class="error__link">
+            <p>Ups...żądana strona nie istnieje</p>
+            <a href="index.html" class="btn btn__primary">strona główna</a>
+          </div>
+        </div>
+      </section>
+    </main><!-- Main end -->
+
+
+    <footer class="footer">
+        <div class="footer__container">
+            <a href="#">polityka prywatności</a><br>
+            <p>©2022 Pet Biom / realizacja:<a href="https://www.solveit.pl/" target="_blank" rel="noopener noreferrer">solveit.pl</a></p>
+        </div>
+        </footer><!-- Footer end -->
+
+        <div class="cookies">
+        <div class="cookies__flex">
+            <p>Ta strona korzysta z ciasteczek, aby świadczyć usługi na najwyższym poziomie. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie.</p>	
+            <a href="javascript:;"  class="cookies__btn btn btn__light submit">ok</a>
+        </div>
+        </div>
+    </div>
+    <script src="./libs/jquery-3.5.0.min.js"></script>
+    <script src="./src/index.js"></script>
+    <script src="./libs/uikit.min.js"></script>
+</body>
+</html>

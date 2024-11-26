@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/index.css"/>
+</head>
+<body>
+    <div class="wrapper">
+    <!-- Header start -->
+    <header class="header">
+      <a href="/" class="header__logo">
+      <img src="./assets/images/logo.svg" alt="Logo PET">
+      </a>
+
+      <!-- <nav>
+      <ul class="header__nav">
+          <li>
+          <a href="#mission" class="header__nav_link">misja</a>
+          </li>
+          <li>
+          <a href="#about" class="header__nav_link">o produkcie</a>
+          </li>
+          <li>
+          <a href="#contact" class="header__nav_link">kontakt</a>
+          </li>
+      </ul>
+      </nav> -->
+
+      <ul class="header__lang">
+      <li>
+          <a href="" class="pl active">pl</a>
+      </li>
+      <li>
+          <a href="" class="en">en</a>
+      </li>
+      </ul>
+
+      <div class="header__burger">
+      <span></span>
+      </div>
+    </header><!-- Header end -->
+
+    <!-- Main start -->
+    <main class="main main-cp">
+      <section class="contact-page">
+        <div class="contact-page__container container">
+          <div class="contact-page__image" style="background: url('./assets/images/bakterie-cont.svg') no-repeat bottom/contain;">
+            <img src="./assets/images/pies-2.png" alt="pies" class="top">
+          </div>
+          <div class="contact-page__form">
+            <h1 class="contact-page__form_title title">Napisz do nas <span>odpowemy w ciągu 24h</span></h1>
+            <form action="">
+              <div>
+                <input type="text" placeholder=" " id="name" >
+                <label for="name">imię</label>
+              </div>
+              <div>
+               <input type="text" id="lastname" id="" placeholder=" " data-required="required">
+                <p class="inp-req"></p>
+                <label for="lastname">nazwisko</label>
+              </div>
+              <div>
+                <input type="email" id="mail" id=""placeholder=" ">
+                 <label for="mail">email</label>
+              </div>
+              <div>
+                <textarea name="" id="text" cols="20" rows="5" placeholder=" "></textarea>
+                 <label for="text">wiadomość</label>
+              </div>
+              <p><input type="checkbox" style="background-color: #fff; color: #ef7d00; border: 1px solid #000;">Wyrażam zgodę na przetwarzanie moich danych osobowych przez Owlie S.A.  w celu i w zakresie niezbędnym do realizacji obsługi niniejszego zgłoszenia. Zapoznałem się z treścią informacji o sposobie przetwarzania moich danych. </p>
+              <button type="submit" class="btn btn__primary">wyślij</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main><!-- Main end -->
+
+
+    <footer class="footer">
+        <div class="footer__container">
+            <a href="#">polityka prywatności</a><br>
+            <p>©2022 Pet Biom / realizacja:<a href="https://www.solveit.pl/" target="_blank" rel="noopener noreferrer">solveit.pl</a></p>
+        </div>
+        </footer><!-- Footer end -->
+
+        <div class="cookies">
+        <div class="cookies__flex">
+            <p>Ta strona korzysta z ciasteczek, aby świadczyć usługi na najwyższym poziomie. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie.</p>	
+            <a href="javascript:;"  class="cookies__btn btn btn__light submit">ok</a>
+        </div>
+        </div>
+    </div>
+    <script src="./libs/jquery-3.5.0.min.js"></script>
+    <script src="./src/index.js"></script>
+    <script src="./libs/uikit.min.js"></script>
+</body>
+</html>

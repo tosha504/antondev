@@ -1,0 +1,22 @@
+.main {
+
+    .error {
+        padding-top: 130px;
+        background: linear-gradient(to bottom, #ffcf9a5e 62%, white 0%); 
+        @media (min-width:$bp3) {
+            background: linear-gradient(to bottom, #ffcf9a5e 75%, white 0%); 
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

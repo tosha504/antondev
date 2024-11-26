@@ -1,0 +1,27 @@
+:root {
+    //Fonts
+    --inter: 'Inter',
+        sans-serif;
+    --mon: "Montserrat", sans-serif;
+
+    //Colors    
+    --primaryColor: #FFFF00;
+    --white: #fff;
+    --themeWhite: #F2F2E6;
+    --black: #0D0D01;
+
+}
+
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1440px
+);
+
+@mixin fontz($fmx, $fmn) {
+    font-size: calc(#{$fmx} + (#{$fmn} * (100vw / 1900)));
+}

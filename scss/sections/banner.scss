@@ -1,0 +1,90 @@
+.banner {
+    background: linear-gradient(to bottom, #ffcf9a5e 32%, white 0%); 
+    padding-top: 150px;
+    @media (min-width:370px) {
+        background: linear-gradient(to bottom, #ffcf9a5e 42%, white 0%); 
+    }
+    
+    @media (min-width:$bp2) {
+        background: linear-gradient(to bottom, #ffcf9a5e 55%, white 0%); 
+    }
+    @media (min-width:$bp3) {
+        background: linear-gradient(to bottom, #ffcf9a5e 75%, white 0%); 
+    }
+
+    &__container {
+        @media (min-width:$bp2) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        @media (min-width:$bp3) {
+            position: relative;
+        }
+    }
+
+    &__content {
+        &_title {
+            @include fontz(24px, 30);
+            font-weight: normal;
+            @media (min-width:$bp2) {
+                margin-bottom: 30px;
+            }
+            @media (min-width:$bp5) {
+                margin-bottom: 50px;
+            }
+        }
+    
+        &_descripton {
+            display: none;
+            @media (min-width:$bp2) {
+                display: block;
+            }
+        }
+
+        @media (min-width:$bp2) {
+            flex: 1 1 50%;
+        }
+    }
+
+    &__image {
+        @media (min-width:$bp2) {
+            flex: 1 1 50%;
+        }
+    }
+    
+    &__items {
+        display: flex;
+        // flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        &_item {
+            flex: 1 1 100%;
+            border-radius: 20px;
+            padding: 20px 20px 30px 20px;
+            background: #fff;
+            margin: 10px;
+            box-shadow: 1px 59px 100px -7px rgba(0, 0, 0, 0.12);
+            max-width: 133px;
+            @media (min-width:$bp3) {
+                margin: 0;
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        @media (min-width:$bp2) {
+            flex: 1 1 100%;
+        }
+
+        @media (min-width:$bp3) {
+            flex-wrap: nowrap;
+            position: absolute;
+            bottom: 5%;
+        }
+
+        @media (min-width:$bp4) {
+            bottom: 13%;
+        }
+    }
+}

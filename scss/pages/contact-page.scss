@@ -1,0 +1,154 @@
+.contact-page {    
+    &__container {
+        padding: 130px 30px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (min-width:$bp3) {
+            justify-content: space-around;
+        }
+    }
+
+    &__image, &__form {
+        @media (min-width:$bp3) {
+            // flex: 1 1 50%;
+        }
+    }
+
+    &__image {
+        display: none;
+        @media (min-width:$bp3) {
+            display: block;
+        }
+    }
+
+    &__form {
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+        &_title {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0;
+            span {
+                font-size: 13px;
+                color: $light-orange;
+                padding: 10px;
+                border-radius: 5px;
+                background: #fef7f0;
+                margin-top: 20px;
+                @media (min-width:$bp1) {
+                    margin-left: 20px;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        div {
+            position: relative;
+
+            input, textarea {
+                border: none;
+                border-bottom: 1px solid #000;
+                padding: 10px 0;
+                margin-bottom: 20px;
+                background: transparent;
+                width: 100%;
+                
+                &:not(:placeholder-shown) ~ label {
+                    top:-8px;
+                    font-size:13px;
+                    color: $light-orange;
+                }
+
+                &:focus {
+                    border-bottom: 1px solid $light-orange;
+                    outline:none;
+                    ~ label{
+                        top:-8px;
+                        font-size:13px;
+                        color: $light-orange;
+                    }                      
+                } 
+            }
+            
+            label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: 0.35s;
+            }
+              
+        }
+        p {
+            display: flex;
+            align-items: start;
+            font-size: 13px;
+            input[type=checkbox] {
+                margin-right: 20px;
+            }
+       
+            input[type='checkbox'] {
+                position: relative;
+                cursor: pointer;
+                margin-right: 20px;
+            }
+            input[type='checkbox']:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                top: 50%;
+                left: 50%;
+                background-color: inherit;
+                // outline: 1px rgba(255, 255, 255, 0.2) solid;
+                transform: translate(-50%, -50%);
+                border: 1px solid #000;
+            }
+            input[type='checkbox']:checked:before {     
+                content: '';
+                display: block;
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                top: 50%;
+                left: 50%;
+                background-color: inherit;
+                // outline: 1px rgba(255, 255, 255, 0.2) solid;
+                transform: translate(-50%, -50%);
+                box-shadow: 0px 0px 4px 1px #fff;
+            }
+            input[type='checkbox']:checked:after {
+                content: '';
+                display: block;
+                width: 6px;
+                height: 10px;
+                border: solid;
+                border-width: 0 2px 2px 0;
+                border-color: inherit;
+                position: absolute;
+                top: 35%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+        }
+        button {
+            border: none;
+            cursor: pointer;
+            transition: 0.35s;
+        }
+    }
+}
+
+.main-cp {
+    @media (min-width:$bp3) {
+        background: linear-gradient(to right, #ffcf9a5e 47%, white 0%);
+    }
+}

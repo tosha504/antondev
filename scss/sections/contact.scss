@@ -1,0 +1,160 @@
+.contact {
+    background: linear-gradient(to top, #ffcf9a5e 90%, white 0%); 
+    padding: 0 0 70px 0; 
+    @media (min-width:$bp3) {
+        padding: 150px 0 50px; 
+        position: relative;
+    }
+    @media (min-width:1780px) {
+        margin-top: 200px;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @media (min-width:$bp3) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        @media (min-width:$bp4) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__image {
+        order: -1;
+        @media (min-width:$bp3) {
+            flex: 1 1 45%;
+        }
+        
+        @media (min-width:$bp5) {
+            position: absolute;
+            right: 0;
+            img{
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60%;
+            }
+        }
+        @media (min-width:1780px) {
+            right: 10%;
+            top: -25%;
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+    .btn {
+        @media (min-width:$bp3) {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%);
+        }
+
+        @media (min-width:$bp4) {
+            left: 75%;
+            bottom: 20%;
+        }
+    }
+
+    &__content {
+        @media (min-width:$bp4) and (max-width:$bp4) {
+            margin: 0 auto;
+        } 
+        @media (min-width:$bp4) {
+            order: -1;
+            margin-right: 50px;
+        }
+    }
+
+    .cards {
+        line-height: 150%;
+        font-size: 16px;
+        @media(min-width:$bp2)  { 
+            display: flex;
+        }
+       
+        @media (min-width:1780px) {
+            justify-content: flex-start;
+        }
+
+
+        &__card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+         
+            width: 100%;
+
+            @media (min-width:$bp2)  {
+                max-width: 330px; 
+                // margin-right: 40px;
+                &:not(:last-child) {
+                    margin-right: 40px;
+                }
+            }
+
+            @media (min-width:$bp5) {
+                z-index: 3;
+                position: relative;
+                
+            }
+
+            &_title {
+                font-weight: normal;
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+
+            address {
+                font-style: normal;
+            }
+
+            .item {
+                padding:15px 0; 
+                &:not(:last-child) {
+                    border-bottom: 1px solid #f0f0f0;
+                }
+            }
+
+            &_name {
+                span {
+                    color: $light-orange;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .phone, .mail {
+            display: block;
+            margin-left: 50px;
+            margin-top: 20px;
+            position: relative;
+            padding: 5px 0;
+
+            &::before {
+                position: absolute;
+                left: -50px;
+                top: 50%;
+                transform: translateY(-40%);
+            }
+        }
+
+        .phone {
+            &::before {
+                content: url(../assets/images/telefon.svg);
+            }
+        }
+
+        .mail {
+            &::before {
+                content: url(../assets/images/mail.svg);
+            }
+        }
+    }
+}

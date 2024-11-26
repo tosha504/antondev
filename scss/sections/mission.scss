@@ -1,0 +1,64 @@
+.mission {
+    padding: 70px 0 ;
+    @media (min-width:$bp3) {
+        padding: 100px 0 ;
+    }
+    line-height: 150%;
+
+    &__container {
+        @media (min-width:$bp3) {
+            display: flex;
+        }
+    }
+
+    &__left {
+        &_description {
+            padding-top: 50px;
+            @media (min-width:$bp2) {
+                padding: 50px 70px;
+            }
+            @media (min-width:$bp5) {
+                padding: 50px 70px 50px 0;
+            }
+            
+        }
+    }
+
+    &__right {
+        margin: 50px 0;
+        background-color: $light-orange;
+        padding: 60px 40px 60px 60px;
+        border-radius: 10px;
+        color: #fff;
+        position: relative;
+
+        p{
+            @media (min-width:$bp3) {
+                position: relative;
+                &::before {
+                    content: url(../assets/images/indicator.svg);
+                    position: absolute;
+                    top: 50%;
+                    left: -115px;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        &::before, &::after {
+            position: absolute;
+        }
+
+        &::before {
+            content: url(../assets/images/quote-top.svg);
+            top: -30px;
+            left: 60px;
+        }
+
+        &::after {
+            content: url(../assets/images/quote-bottom.svg);
+            bottom: -35px;
+            right: 60px;
+        }
+    }
+}

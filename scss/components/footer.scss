@@ -1,0 +1,38 @@
+@use './_varibles' as v;
+
+.footer {
+  padding: 60px 0;
+
+  @media (min-width: map-get(v.$grid-breakpoints, md)) {
+    padding: 120px 0 60px;
+    position: relative;
+    display: block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: var(--primaryColor);
+      top: 0;
+      width: 270px;
+      right: 0;
+      height: 100%;
+
+      @media (min-width: map-get(v.$grid-breakpoints, lg)) {
+        right: 200px;
+      }
+    }
+  }
+
+
+  &__autor {
+    text-align: center;
+
+    span {
+      color: var(--primaryColor);
+      margin-left: 50px;
+      mix-blend-mode: difference;
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

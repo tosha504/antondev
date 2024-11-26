@@ -1,0 +1,625 @@
+@use './_varibles' as v;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  font-size: clamp(14px, 1vw, 18px);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  font-weight: 400;
+  color: var(--white);
+  background-color: var(--black);
+  font-family: var(--mon);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.fixed-page {
+  overflow: hidden;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 100%;
+}
+
+.container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @media (min-width: map-get(v.$grid-breakpoints, md)) {
+    max-width: 720px;
+  }
+
+  @media (min-width: map-get(v.$grid-breakpoints, lg)) {
+    max-width: 960px;
+  }
+
+  @media (min-width: map-get(v.$grid-breakpoints, xl)) {
+    max-width: 1140px;
+  }
+
+  @media (min-width: map-get(v.$grid-breakpoints, xxl)) {
+    max-width: 71.5vw;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--black);
+  outline: none;
+  text-decoration: none;
+  transition: 0.3s;
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--primaryColor);
+    }
+  }
+}
+
+button,
+button:active,
+button:focus,
+button:hover,
+input,
+input:active,
+input:focus,
+input:hover,
+textarea,
+textarea:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-family: var(--inter);
+}
+
+h1 {
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 600;
+}
+
+h2,
+h3 {
+  font-size: clamp(25px, 2vw, 48px);
+}
+
+section {
+  padding: 25px 0;
+
+  @media (min-width: map-get(v.$grid-breakpoints, md)) {
+    padding: 50px 0;
+  }
+
+  &:first-child {
+
+    @media (min-width: map-get(v.$grid-breakpoints, md)) {
+      padding: 50px 0 25px;
+    }
+  }
+
+  &:last-child {
+
+    @media (min-width: map-get(v.$grid-breakpoints, md)) {
+      padding: 25px 0 50px 0;
+    }
+  }
+}
+
+.cookies {
+  display: none;
+  color: var(--black);
+  background: #fff;
+  font-weight: normal;
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  right: 0;
+  z-index: 4;
+  width: 80%;
+  padding: 15px;
+  font-size: 13px;
+  box-shadow: 2px 9px 24px -1px rgba(0, 0, 0, 0.12);
+
+  @media (min-width: map-get(v.$grid-breakpoints, md)) {
+    width: 30%;
+    padding: 30px;
+  }
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    @media (max-width: map-get(v.$grid-breakpoints, sm)) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__btn {
+
+    @media (max-width: map-get(v.$grid-breakpoints, sm)) {
+      margin-top: 5px;
+    }
+
+    @media (min-width: map-get(v.$grid-breakpoints, sm)) {
+      margin-left: 10px;
+    }
+
+    background-color: #ffcf9a5e;
+    color: var(--primaryColor);
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+}
+
+//hero
+.hero-section {
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+  }
+
+  &__left,
+  &__right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    @media (min-width: map-get(v.$grid-breakpoints, lg)) {
+      flex: 1 1 47%;
+    }
+  }
+
+  &__left {
+    position: relative;
+
+    h1 {
+      font-weight: 400;
+      text-align: center;
+
+      span {
+        &.prime-bg {
+          background-size: 300% 300%;
+          background-image: linear-gradient(-45deg, #FFFF00 0%, #9FEE00 25%, #FFFF00 51%, #7109AA 100%);
+          color: var(--black);
+          font-weight: 500;
+          padding: 5px 20px;
+          animation: AnimateBG 5s ease infinite;
+        }
+      }
+    }
+
+  }
+
+  &__right {
+    margin: auto;
+    max-height: 70vw;
+    max-width: 70vw;
+
+    @media (min-width: map-get(v.$grid-breakpoints, md)) {
+      max-height: 400px;
+      max-width: 400px;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+//about-sections
+.about-section {
+  &__wrap {
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 35px;
+
+    .left,
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+
+      @media (min-width: map-get(v.$grid-breakpoints, md)) {
+        flex: 0 1 47%;
+      }
+    }
+
+  }
+
+  @media (min-width: map-get(v.$grid-breakpoints, md)) {
+    padding: 50px 0;
+    flex-wrap: nowrap;
+  }
+
+  .bottom {
+    display: flex;
+
+    &__left,
+    &__right {
+      flex: 1 1 100%;
+
+      @media (min-width: map-get(v.$grid-breakpoints, md)) {
+        flex: 0 1 50%;
+      }
+    }
+
+    &__left {
+      display: none;
+
+      @media (min-width: map-get(v.$grid-breakpoints, md)) {
+        position: relative;
+        display: block;
+
+        &::after {
+          content: '';
+          position: absolute;
+          background-color: var(--primaryColor);
+          top: 0;
+          width: 270px;
+          right: 0;
+          height: 100%;
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      padding-bottom: 50px;
+
+      @media (min-width: map-get(v.$grid-breakpoints, md)) {
+        padding-left: 100px;
+        padding-bottom: 100px;
+      }
+
+      .wanna {
+        font-size: clamp(25px, 3vw, 40px);
+        font-weight: 700;
+        background: linear-gradient(to right,
+            #FFFF00 0%, #9FEE00 25%, #FFFF00 51%, #7109AA 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+        background-size: 500% auto;
+        animation: AnimateBG 5s ease-in-out infinite alternate;
+      }
+
+      img {
+        transition: 0.35s;
+        opacity: 0.5;
+        width: 150px;
+
+        @media (hover: hover) {
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+//technologies
+.tech-section {
+  .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px 0;
+  }
+
+  &__left,
+  &__right {
+    flex: 1 1 100%;
+    max-width: 100%;
+
+    @media (min-width: map-get(v.$grid-breakpoints, md)) {
+      flex: 1 1 50%;
+      max-width: 50%;
+    }
+  }
+
+  &__right {
+    z-index: 20;
+    position: relative;
+    pointer-events: none;
+    overflow: hidden;
+
+    div {
+      display: flex;
+      align-items: center;
+      padding-right: 10px;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+//what
+.waht-section {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__left,
+  &__right {
+    flex: 1 1 100%;
+    max-width: 100%;
+
+    @media (min-width: map-get(v.$grid-breakpoints, lg)) {
+      flex: 0 1 50%;
+    }
+  }
+
+  &__left {
+    h2 {
+      position: relative;
+      z-index: 2;
+
+      @media (max-width: map-get(v.$grid-breakpoints, xl)) {
+        mix-blend-mode: difference;
+        color: var(--primaryColor);
+      }
+    }
+
+
+
+    position: relative;
+    display: block;
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: var(--primaryColor);
+      top: 0;
+      width: 270px;
+      right: 0;
+      height: 100%;
+    }
+  }
+
+  &__right {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 20px;
+
+    .card {
+      background-color: #d9d9d910;
+      border-radius: 32px;
+      padding: 20px;
+      width: 100%;
+      position: relative;
+      transition: 0.35s ease-in-out;
+
+      @media (hover: hover) {
+        &:hover {
+          background-size: 300% 300%;
+          background-image: linear-gradient(-45deg, #7109AA 0%, #9FEE00 25%, #FFFF00 51%, #FFFF00 100%);
+          color: var(--black);
+          animation: AnimateBG 5s ease 0.35s infinite;
+
+          .image_btn {
+            filter: invert(100%) sepia(4%) saturate(17%) hue-rotate(147deg) brightness(106%) contrast(105%);
+          }
+        }
+      }
+
+      @media (min-width: map-get(v.$grid-breakpoints, sm)) {
+        flex: 0 1 45%;
+      }
+
+      h4 {
+        text-transform: capitalize;
+        margin-bottom: 50px;
+      }
+
+      p {
+        margin-top: 60px;
+        font-size: clamp(14px, 1vw, 17px);
+        margin-bottom: 120px;
+      }
+
+      .image_btn {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        transition: 0.35s;
+      }
+    }
+  }
+}
+
+//aditional 
+.additionally-section {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 0px;
+
+    h3,
+    p {
+      flex: 1 1 100%;
+
+      @media (min-width: map-get(v.$grid-breakpoints, lg)) {
+        max-width: calc(50% - 10px);
+      }
+    }
+
+    p {
+      font-size: clamp(16px, 1vw, 26px);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+
+}
+
+//projects
+.projects-section {
+
+  .item {
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-right: 10px;
+
+    @media (min-width: map-get(v.$grid-breakpoints, md)) {
+      flex-direction: row;
+    }
+
+    &__left,
+    &__rigth {
+      flex: 1 1 100%;
+    }
+
+    &__left {
+      background: var(--primaryColor);
+      color: var(--black);
+      padding: 10px;
+
+      @media (min-width: map-get(v.$grid-breakpoints, lg)) {
+        padding: 50px;
+      }
+
+      h3 {
+        margin-bottom: 50px;
+
+        @media (min-width: map-get(v.$grid-breakpoints, lg)) {
+          margin-bottom: 200px;
+        }
+      }
+
+      .btn-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+
+        a {
+          flex: 1 1 auto;
+          max-width: 100px;
+
+          @media (min-width: map-get(v.$grid-breakpoints, lg)) {
+            max-width: 150px;
+          }
+        }
+
+      }
+
+      @media (min-width: map-get(v.$grid-breakpoints, lg)) {
+        flex: 1 1 50%;
+      }
+    }
+
+    &__right {
+      padding: 20px;
+      min-height: 200px;
+      width: 100%;
+
+      @media (min-width: map-get(v.$grid-breakpoints, lg)) {
+        flex: 1 1 50%;
+      }
+
+    }
+  }
+
+  .slick-dots {
+    display: flex;
+    position: absolute;
+    list-style: none;
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    cursor: pointer;
+
+    li {
+      margin: 0 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--white);
+      transition: 0.3s;
+
+      button {
+        display: none;
+      }
+
+      &.slick-active {
+        background-color: var(--primaryColor);
+      }
+
+      &:hover {
+        background-color: var(--primaryColor);
+      }
+    }
+  }
+}
